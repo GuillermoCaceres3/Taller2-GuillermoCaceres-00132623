@@ -1,6 +1,8 @@
 package com.pmtaller2_00132623_GuillermoCaceres.Screens
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -12,6 +14,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.pmtaller2_00132623_GuillermoCaceres.Restaurant
 import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.Alignment
+import coil.compose.AsyncImage
 
 
 @Composable
@@ -31,10 +35,15 @@ fun RestaurantListScreen(restaurants: List<Restaurant>, navController: NavContro
                                     navController.navigate("menu/${restaurant.id}")
                                 }
                         ) {
-                            Text(
-                                text = restaurant.name,
-                                modifier = Modifier.padding(16.dp)
-                            )
+                            Column(horizontalAlignment = Alignment.CenterHorizontally){
+                                AsyncImage(
+                                    model = restaurant.imageUrl,
+                                    contentDescription = restaurant.name,
+                                    modifier = Modifier
+                                        .padding(8.dp).height(150.dp)
+                                )
+                                Text(restaurant.name,modifier = Modifier.padding(8.dp))
+                            }
                         }
                     }
                 }

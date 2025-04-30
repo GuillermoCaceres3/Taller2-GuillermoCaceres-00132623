@@ -22,7 +22,7 @@ fun BottomNavigationBar(navController: NavHostController) {
     val items = listOf(
         BottomNavItem("Restaurantes", "restaurants", Icons.Default.Home),
         BottomNavItem("Buscar","buscar", Icons.Default.Search),
-        BottomNavItem("Ordenes","ordenes,", Icons.Default.ShoppingCart,)
+        BottomNavItem("Ordenes","ordenes", Icons.Default.ShoppingCart,)
     )
 
     NavigationBar {
